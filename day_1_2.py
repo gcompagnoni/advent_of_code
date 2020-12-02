@@ -1,3 +1,5 @@
+from typing import List, Optional
+
 with open('inputs/input_1.txt', 'r') as infile:
     s = [int(x) for x in infile.readlines()]
 
@@ -5,7 +7,7 @@ s.sort()
 global_sum = 2020
 
 
-def recursive_binary_search(r, x, my_sum):
+def recursive_binary_search(r: List[int, ...], x: int, my_sum: int) -> Optional[int]:
     if len(r) == 0:
         return None
     y_index = len(r) // 2
