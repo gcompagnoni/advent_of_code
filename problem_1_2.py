@@ -1,4 +1,4 @@
-with open('input_1_1.txt', 'r') as infile:
+with open('inputs/input_1.txt', 'r') as infile:
     s = [int(x) for x in infile.readlines()]
 
 s.sort()
