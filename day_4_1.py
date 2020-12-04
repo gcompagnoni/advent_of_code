@@ -9,7 +9,7 @@ for passport in passport_list:
     valid = 1
     for field in required_fields:
         valid *= passport.count(field)
-    if valid == 1:
+    if valid:
         valid_passports += 1
 
 print(valid_passports)
