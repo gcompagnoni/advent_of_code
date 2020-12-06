@@ -11,7 +11,7 @@ def str2place(input_string: str) -> Tuple[int, int]:
 
 
 max_seat_id = 0
-for seat in seat_list:
+for seat in seat_list:  # could use list comprehension, but no need to store all results in memory
     row_num, col_num = str2place(seat)
     seat_id = 8 * row_num + col_num  # this is the same as just reading the whole string as binary
     max_seat_id = max(max_seat_id, seat_id)
