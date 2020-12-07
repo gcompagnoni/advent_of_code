@@ -20,7 +20,7 @@ def extract_rule(text_rule: str) -> Tuple[str, Optional[Dict]]:
 dict_rules = dict([extract_rule(rule) for rule in text_rules])
 
 
-def recursive_search(bag, target):
+def recursive_search(bag: str, target: str) -> bool:
     content = dict_rules[bag]
     if content is None:
         return False
