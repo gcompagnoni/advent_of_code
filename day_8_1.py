@@ -1,13 +1,13 @@
+import re
+
 with open('inputs/input_8.txt', 'r') as infile:
     lines = infile.readlines()
-
-accumulator = 0
 
 
 def execute_line(line_num: int) -> int:
     line = lines[line_num]
     instruction = line[:3]
-    number = int(line[4:-1])
+    number = int(re.search('[+-][0-9]+', line).group())
     if instruction == 'nop':
         return line_num + 1
     elif instruction == 'jmp':
@@ -20,6 +20,7 @@ def execute_line(line_num: int) -> int:
         raise ValueError(f'Line {line_num}: unknown instruction')
 
 
+accumulator = 0
 new_line = 0
 visited_lines = {new_line}
 visited = False
