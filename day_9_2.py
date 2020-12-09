@@ -8,12 +8,17 @@ invalid_num = numbers[invalid_pos]
 
 k = 0
 candidate_list = [numbers[k]]
+candidate_sum = numbers[k]
 
+# this should require at most 2n additions
+# (every number is added and removed from candidates at most once)
 while k < invalid_pos:
-    while sum(candidate_list) < invalid_num:
+    while candidate_sum < invalid_num:
         k += 1
         candidate_list.append(numbers[k])
-    if sum(candidate_list) == invalid_num:
+        candidate_sum += numbers[k]
+    if candidate_sum == invalid_num:
         print(min(candidate_list) + max(candidate_list))
         break
-    candidate_list.pop(0)
+    remove_value = candidate_list.pop(0)
+    candidate_sum -= remove_value
