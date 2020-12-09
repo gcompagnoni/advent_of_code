@@ -16,5 +16,5 @@ def in_sumset(n: int, s: List[int]) -> bool:
 
 for k in range(25, len(numbers)):
     if not in_sumset(numbers[k], numbers[k - 25:k]):
-        print(numbers[k])
+        print(f' The first invalid number is {numbers[k]} at position {k}')
         break
