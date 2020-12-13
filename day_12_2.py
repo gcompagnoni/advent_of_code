@@ -3,8 +3,8 @@ import numpy as np
 with open('inputs/input_12.txt', 'r') as infile:
     moves = infile.read().split()
 
-position = np.array([0, 0])
-direction = np.array([1, 0])
+ship_position = np.array([0, 0])
+wp_position = np.array([10, 1])
 
 card2vec = {'E': np.array([1, 0]), 'W': np.array([-1, 0]),
             'N': np.array([0, 1]), 'S': np.array([0, -1])}
@@ -23,12 +23,12 @@ for line in moves:
     command = line[0]
     value = int(line[1:])
     if command in card2vec.keys():
-        position += value * card2vec[command]
-    elif command == 'F':
-        position += value * direction
+        wp_position += value * card2vec[command]
     elif command in dir2sign.keys():
-        direction = turn(value, command, direction)
+        wp_position = turn(value, command, wp_position)
+    elif command == 'F':
+        ship_position += value * wp_position
     else:
         raise ValueError(f'Could not understand command {line}')
 
-print(np.abs(position).sum())
+print(np.abs(ship_position).sum())
