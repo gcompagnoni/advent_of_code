@@ -1,4 +1,4 @@
-with open('inputs/input_4.txt', 'r') as infile:
+with open('inputs/input_04.txt', 'r') as infile:
     passport_list = infile.read().split('\n\n')
 
 required_fields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']

@@ -9,7 +9,7 @@ def interpret_line(line: str) -> Tuple[int, int, str, str]:
     return place_1, place_2, char, string
 
 
-with open('inputs/input_2.txt', 'r') as infile:
+with open('inputs/input_02.txt', 'r') as infile:
     input_list = infile.readlines()
 
 valid_lines = 0

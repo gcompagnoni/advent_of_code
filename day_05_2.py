@@ -1,6 +1,6 @@
 from typing import Tuple
 
-with open('inputs/input_5.txt', 'r') as infile:
+with open('inputs/input_05.txt', 'r') as infile:
     seat_list = infile.read().split()
 
 

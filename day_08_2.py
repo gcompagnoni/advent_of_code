@@ -1,7 +1,7 @@
 import re
 from typing import List, Optional
 
-with open('inputs/input_8.txt', 'r') as infile:
+with open('inputs/input_08.txt', 'r') as infile:
     lines = infile.readlines()
 
 

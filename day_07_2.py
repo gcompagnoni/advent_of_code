@@ -1,7 +1,7 @@
 import re
 from typing import Tuple, Dict, Optional
 
-with open('inputs/input_7.txt', 'r') as infile:
+with open('inputs/input_07.txt', 'r') as infile:
     text_rules = infile.readlines()
 
 

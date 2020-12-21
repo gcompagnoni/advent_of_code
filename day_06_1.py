@@ -1,4 +1,4 @@
-with open('inputs/input_6.txt', 'r') as infile:
+with open('inputs/input_06.txt', 'r') as infile:
     groups = infile.read().split('\n\n')
 
 unique_questions = [set(g.replace('\n', '')) for g in groups]

@@ -1,4 +1,4 @@
-with open('inputs/input_6.txt', 'r') as infile:
+with open('inputs/input_06.txt', 'r') as infile:
     groups = infile.read().split('\n\n')
 
 individual_questions = [[set(q) for q in g.split('\n')] for g in groups]

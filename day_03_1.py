@@ -2,7 +2,7 @@ from math import ceil
 
 import numpy as np
 
-with open('inputs/input_3.txt', 'r') as infile:
+with open('inputs/input_03.txt', 'r') as infile:
     base_array = np.array([list(l) for l in infile.read().split()])
 
 delta_x = 3

@@ -2,7 +2,7 @@ from math import ceil
 
 import numpy as np
 
-with open('inputs/input_3.txt', 'r') as infile:
+with open('inputs/input_03.txt', 'r') as infile:
     base_array = np.array([list(l) for l in infile.read().split()])
 
 deltas = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]

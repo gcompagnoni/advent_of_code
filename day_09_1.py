@@ -1,6 +1,6 @@
 from typing import List
 
-with open('inputs/input_9.txt', 'r') as infile:
+with open('inputs/input_09.txt', 'r') as infile:
     input_lines = infile.readlines()
 
 numbers = [int(x) for x in input_lines]
