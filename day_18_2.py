@@ -29,17 +29,22 @@ def recompose_expression(numbers: list[int], operators: list[str]) -> str:
     return ''.join(expression_list)
 
 
+# only changed function compared to part 1
 def eval_simplified_expression(expression: str) -> int:
     numbers, operators = decompose_expression(expression)
-    if len(numbers) > 1:
-        # evaluate the first operation from the left
-        first_number = eval(str(numbers[0]) + operators[0] + str(numbers[1]))
-        new_numbers = [first_number] + numbers[2:]
-        new_operators = operators[1:]
+
+    if expression.find('+') > 0:
+        # evaluate the first addition operation from the left
+        idx = operators.index('+')
+        # i-th operator sums i-th and (i+1)-th numbers
+        s = numbers[idx] + numbers[idx + 1]
+        new_operators = operators[:idx] + operators[idx + 1:]
+        new_numbers = numbers[:idx] + [s] + numbers[idx + 2:]
         new_expression = recompose_expression(new_numbers, new_operators)
         return eval_simplified_expression(new_expression)
     else:
-        return int(numbers[0])
+        # there are only multiplications, so it is the same as usual arithmetic
+        return eval(expression)
 
 
 with open('inputs/input_18.txt', 'r') as infile:
